@@ -1,0 +1,53 @@
+const botao = document.querySelector("button")
+const select = document.querySelector(".moeda-select")
+function toquei() {
+    const input = document.querySelector(".valor").value
+    const dolarhj = 5
+    const eurohj = 6
+    const librahj = 7
+    const valorreal = document.querySelector(".real")
+    const outrasmoeda = document.querySelector(".outras-moeda")
+    const moedaSelect = select.value;
+    if (moedaSelect == "dolar") {
+        outrasmoeda.innerHTML = new Intl.NumberFormat("en-US", {
+            style: "currency", currency: "USD"
+        }).format(input / dolarhj);
+
+
+    } if (moedaSelect == "Euro") {
+        outrasmoeda.innerHTML = new Intl.NumberFormat("de-DE", {
+            style: "currency", currency: "EUR"
+        }).format(input / eurohj);
+    }if(moedaSelect == "libra"){
+        outrasmoeda.innerHTML=new Intl.NumberFormat('en-GB', {
+            style: 'currency',
+            currency: 'GBP'
+          }).format(input/librahj)
+    }
+
+    valorreal.innerHTML = new Intl.NumberFormat("pt-BR", {
+        style: "currency", currency: "BRL"
+    }).format(input)
+
+}
+const idioma=document.querySelector(".idioma")
+
+function mudei() {
+    const img=document.querySelector(".imagem")
+    const idioma=document.querySelector(".idioma")
+    if (select.value == "dolar") {
+        idioma.innerHTML = "Dólar Americano"
+        img.src="others/estados-unidos (1) 1.png"
+
+    } if (select.value == "Euro") {
+        idioma.innerHTML = "Euro"
+        img.src="others/euro.png"
+    }if(select.value == "libra"){
+        idioma.innerHTML = "Libra"
+        img.src="others/libra 1.png"
+    }
+    toquei()//chamou a funçao do botao pra atualizar o valor quando trocar
+}
+
+select.addEventListener("change", mudei)
+botao.addEventListener("click", toquei)
