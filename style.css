@@ -8,13 +8,14 @@
 
 body {
     background-color: #8A51FC;
+  
    
 }
 
 
 .logo {
-    width: 300px;
-    height: 300px;
+    width: 100px;
+    height: 100px;
 }
 
 main {
@@ -22,7 +23,7 @@ main {
     display: block;
     margin: 0 auto 20px;
     width: 375px;
-    height: 752px;
+    height: 622px;
     background: #F4F4F4;
     padding: 20px;
 
@@ -46,7 +47,7 @@ select,input {
     line-height: 18px;
     background: #FFF;
     padding: 5px;
-    margin: 5px;
+    margin: 1px;
     
     border-radius: 4px;
     border: 1px solid #BBB;
